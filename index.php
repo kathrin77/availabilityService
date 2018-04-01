@@ -44,18 +44,19 @@ and open the template in the editor.
                                 msg += '<div class="red_tile" class="'+ id + '">';
                             }
                             
-                            msg += '<div class ="photo"><img src="img/'+ img_id +
-                                    '" alt="'+ title +'" width="220"/></div>'+
-                                    '<p class = "title">'+ title +'</p>'+
-                                     '<p class = "note">' + note + '</p>'+
-                                     '<p class = "availability"> Verfügbar: ';
+                            msg += '<p class = "title">'+ title +'</p>'+
+                                    '<div class ="photo"><img src="img/'+ img_id +
+                                    '" alt="'+ title +'" width="220" ></div>'+
+                                    
+                                    '<p class = "availability"> ';
                             
                             if (available !== 0) {
                                 msg += available;
                             } else {
                                 msg += '<span class="allgone">'+ available + ' </span>';
                             }
-                            msg += ' / Total: ' + total + '</p></div>';
+                            msg += ' von ' + total + '</p></div>';
+//                               '<p class = "note">' + note + '</p></div>';
 
                         }
                         
@@ -66,8 +67,17 @@ and open the template in the editor.
             });
         
         </script>
-        <img class="logo" src="img/hsg_logo_de.jpg" width="180px">
+        <div class="logo">
+            <a href="http://www.biblio.unisg.ch"><img src="img/hsg_logo_de.jpg" width="180px" alt="HSG-Bibliothek"></a>
+        </div>
         <header>Verfügbarkeit Kleinmaterialien</header>
+        <nav>
+            <ul id="navi">
+                <li><a href="index.php"><img src="img/refresh.png" alt="Refresh"></a></li>
+                <li><a href="info.php"><img src="img/info.png" alt="Info"></a></li>
+            </ul>
+
+        </nav>
         <div id="items"></div>
         <div id="reload"></div>
 

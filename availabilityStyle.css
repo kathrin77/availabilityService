@@ -14,16 +14,14 @@ body {
     
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     width: auto;
-/*    width: 980px;*/
     margin: auto;
     
 }
 
 header {
-    text-align: center;
     padding: 20px;
     font-weight: bold;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .logo {
@@ -33,33 +31,74 @@ header {
    
 }
 
+nav {
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+
+}
+
+#navi {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkgray;
+    position: fixed;
+    top: 60px;
+    right: 15px;
+}
+
+#navi li {
+    float: left;
+    border-right: 1px solid white;
+}
+
+#navi li:last-child {
+    border-right: none;
+}
+
+#navi li a {
+    display: block;
+    color: black;
+    padding: 8px;
+    text-decoration: none;
+}
+
+#navi li a:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+
+
 #items {
 /*    visibility: hidden;*/
     
 }
 
 .photo {
+/*    display:inline;*/
 
-/*    border: 2px solid white;*/
 }
 
 .green_tile {
-    background-color: lightgrey;
     border: 20px solid darkgreen;
 
 }
 
 .red_tile {
-    background-color: lightgray;
     border: 20px solid darkred;
 }
 
 .green_tile, .red_tile {
+    background-color: lightgrey;    
     padding: 10px;
     margin: 10px;
     float:left;
     width: 220px;
-    height: 320px;
+    max-height: 260px;
     overflow: hidden;
 }
 
@@ -68,14 +107,30 @@ header {
 }
 
 p {
-    word-wrap: break-word;
+/*    word-wrap: break-word;*/
 }
 
 .title, .availability {
     font-weight: bold;
 }
+
+.title {
+    display: block;
+}
+
+.availability {
+    position: relative;
+    top: -80px;
+    left: 140px;
+    background-color: whitesmoke;
+    color: darkgreen;
+    border: 1px solid darkgray;
+    padding: 8px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
 .note {
     font-size: small;
+    visibility:hidden;
 }
 
 
