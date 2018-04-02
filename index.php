@@ -16,6 +16,8 @@ and open the template in the editor.
         
         <script>
             $(document).ready(function() {
+                
+                var search_item = [];
                                 
                 $.ajax({
                     url: "availabilityService.php",
@@ -28,6 +30,9 @@ and open the template in the editor.
                         var max = Object.keys(items).length;
 
                         var msg = '';
+                        
+                        search_item = [];
+                        
 
                         for (var i =1; i<=max; i++) {                            
 
@@ -36,17 +41,18 @@ and open the template in the editor.
                             var available = items[i].available;
                             var total = items[i].total;
                             var note = items[i].note;
+                            search_item.push(''+title.toLowerCase()+', '+note.toLowerCase()); //alles in Kleinbuchstaben
                             var id = items[i].volume;
                             
                             if (available !== 0) {//es hat noch
-                                msg += '<div class="green_tile" class="'+ id + '">';
-                            } else {
-                                msg += '<div class="red_tile" class="'+ id + '">';
+                                msg += '<div class="green_tile tile '+(i-1)+'" id="'+ id + '">';
+                            } else {//es hat keine mehr
+                                msg += '<div class="red_tile tile '+(i-1)+'" id="'+ id + '">';
                             }
                             
                             msg += '<p class = "title">'+ title +'</p>'+
                                     '<div class ="photo"><img src="img/'+ img_id +
-                                    '" alt="'+ title +'" width="220" ></div>'+
+                                    '" alt="'+ title +', '+note+'" width="220" ></div>'+
                                     
                                     '<p class = "availability"> ';
                             
@@ -63,10 +69,35 @@ and open the template in the editor.
                         $('#items').html(msg);
                     }
                 });
+                
+                var filter = function() {
+                    var input = $('#filter-search').val().toLowerCase(); //Text aus Eingabe in Kleinbuchstaben
+                    console.log(search_item);
+                    console.log(input);
+
+                    $('.tile').css('display', 'none');
+                    
+                    //durch alles durchiterieren
+                    for (var index in search_item) { 
+                        
+                        if (search_item[index].indexOf(input) >-1) {
+                            $('.'+index+'').css('display', '');
+                        }
+//                        if (search_item[index].search(input) >-1) {
+//                            $('#items').append('<p>'+search_item[index]+'</p>');
+//                        }
+                    }
+                    
+                    
+                };
+                
+                $('#filter-search').on('input', filter);             
+
 
             });
         
         </script>
+
         <div class="logo">
             <a href="http://www.biblio.unisg.ch"><img src="img/hsg_logo_de.jpg" width="180px" alt="HSG-Bibliothek"></a>
         </div>
@@ -78,8 +109,10 @@ and open the template in the editor.
             </ul>
 
         </nav>
+        <div id="search">
+            <input type="text" placeholder="Suche nach..." id="filter-search"/>
+        </div>
         <div id="items"></div>
-        <div id="reload"></div>
 
     </body>
 </html>

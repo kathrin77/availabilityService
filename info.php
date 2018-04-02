@@ -27,7 +27,9 @@ and open the template in the editor.
 
         </nav>
         <div id="info">
-            <p>Hier kommt eine kurze Anleitung zur Ausleihe hin.</p>
+            <p class="instructions">
+                Hier kommt eine kurze Anleitung zur Ausleihe hin.
+            </p>
         </div>
 
     </body>

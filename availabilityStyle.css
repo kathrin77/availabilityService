@@ -19,23 +19,21 @@ body {
 }
 
 header {
-    padding: 20px;
+    padding: 10px;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2em;
+    overflow-wrap: break-word;
 }
 
 .logo {
    
    text-align: left;
-   margin: 5px;
+   margin: 10px;
    
 }
 
 nav {
     margin: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-weight: bold;
 
 }
 
@@ -46,8 +44,8 @@ nav {
     overflow: hidden;
     background-color: darkgray;
     position: fixed;
-    top: 60px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
 }
 
 #navi li {
@@ -61,7 +59,6 @@ nav {
 
 #navi li a {
     display: block;
-    color: black;
     padding: 8px;
     text-decoration: none;
 }
@@ -71,7 +68,21 @@ nav {
     color: white;
 }
 
+#search {
 
+    margin: 10px;
+}
+
+input {
+    padding: 8px;
+    height: 30px;
+    width: 260px;
+/*    text-align: center;*/
+    font-weight: bold;
+    font-size: large;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+
+}
 
 #items {
 /*    visibility: hidden;*/
@@ -92,7 +103,7 @@ nav {
     border: 20px solid darkred;
 }
 
-.green_tile, .red_tile {
+.tile {
     background-color: lightgrey;    
     padding: 10px;
     margin: 10px;
@@ -131,6 +142,13 @@ p {
 .note {
     font-size: small;
     visibility:hidden;
+}
+
+.instructions {
+    margin: 10px;
+    background-color: lightgray;
+    padding: 20px;
+    word-wrap: break-word;
 }
 
 
