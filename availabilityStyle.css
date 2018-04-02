@@ -151,5 +151,12 @@ p {
     word-wrap: break-word;
 }
 
+.jq-icon-info {
+    background-color: #20252d;
+}
+
+.jq-toast-wrap {
+    width: 150px;
+}
 
 

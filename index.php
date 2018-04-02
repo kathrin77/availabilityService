@@ -8,8 +8,11 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.toast.min.js"></script>
+        <script type="text/javascript" src="toast.js"></script>
+        <link rel="stylesheet" type="text/css" href="jquery.toast.min.css"/>
+        <link rel="stylesheet" type="text/css" href="availabilityStyle.css"/> 
 
-        <link rel="stylesheet" type="text/css" href="availabilityStyle.css"/>        
         <title>Availability Service</title>
     </head>
     <body>
@@ -18,6 +21,8 @@ and open the template in the editor.
             $(document).ready(function() {
                 
                 var search_item = [];
+                var title;
+                var note;                
                                 
                 $.ajax({
                     url: "availabilityService.php",
@@ -30,17 +35,18 @@ and open the template in the editor.
                         var max = Object.keys(items).length;
 
                         var msg = '';
-                        
+                        var title;
+                        var note;
                         search_item = [];
                         
 
                         for (var i =1; i<=max; i++) {                            
 
-                            var title = items[i].callno;
+                            title = items[i].callno;
                             var img_id = items[i].img_id;
                             var available = items[i].available;
                             var total = items[i].total;
-                            var note = items[i].note;
+                            note = items[i].note;
                             search_item.push(''+title.toLowerCase()+', '+note.toLowerCase()); //alles in Kleinbuchstaben
                             var id = items[i].volume;
                             
@@ -51,7 +57,7 @@ and open the template in the editor.
                             }
                             
                             msg += '<p class = "title">'+ title +'</p>'+
-                                    '<div class ="photo"><img src="img/'+ img_id +
+                                    '<div class ="photo"><img class="link-image" src="img/'+ img_id +
                                     '" alt="'+ title +', '+note+'" width="220" ></div>'+
                                     
                                     '<p class = "availability"> ';
@@ -67,8 +73,20 @@ and open the template in the editor.
                         }
                         
                         $('#items').html(msg);
+                        
+                        init_imgclick();
                     }
                 });
+                
+                var init_imgclick = function(){
+                    $('.link-image').click(function(){
+                        
+                        var note = $(this).attr("alt");
+                        loadtoast(note);
+                    });
+                };
+                
+                
                 
                 var filter = function() {
                     var input = $('#filter-search').val().toLowerCase(); //Text aus Eingabe in Kleinbuchstaben
@@ -91,7 +109,10 @@ and open the template in the editor.
                     
                 };
                 
-                $('#filter-search').on('input', filter);             
+                $('#filter-search').on('input', filter); 
+                
+           
+                
 
 
             });
