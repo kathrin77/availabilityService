@@ -28,9 +28,29 @@ and open the template in the editor.
         </nav>
         <div id="info">
             <p class="instructions">
-                Hier kommt eine kurze Anleitung zur Ausleihe hin.
+                
+                <b>Ausleihbedingungen für alle Kleinmaterialien:</b> 
+                
+                <ul>
+                    <li>Tagesausleihe: Rückgabe bis Schließung gleichentags</li>
+                    <li>Rückgabe nur an der Ausleihtheke</li>
+                    <li>Gebühr verspätete Rückgabe: CHF 5.- pro Tag</li>
+                    <li>Bitte Ladekabel so rasch wie möglich wieder zurückbringen.</li>
+                </ul>
+            
+            Bei Fragen oder Anregungen steht Ihnen das Bibliothekspersonal gerne zur Verfügung. <br>
+            <a href="https://www.unisg.ch/de/universitaet/bibliothek/ueberuns/oeffnungszeiten">Öffnungszeiten der Bibliothek</a>
             </p>
         </div>
+        <footer>
+            <address>
+                <a href="https://www.unisg.ch/universitaet/bibliothek" >HSG-Bibliothek</a> &bull; 
+                <a href="mailto:bibliothek@unisg.ch">bibliothek@unisg.ch</a> &bull; 
+                +41 71 224 22 70 &bull;
+                Dufourstrasse 50 &bull; 
+                CH-9000 St.Gallen
+            </address>
+        </footer>
 
     </body>
 </html>

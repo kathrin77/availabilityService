@@ -20,14 +20,17 @@ and open the template in the editor.
         <script>
             $(document).ready(function() {
                 
-                var search_item = [];
-                var title;
-                var note;                
+                var search_item = [];            
                                 
                 $.ajax({
                     url: "availabilityService.php",
                     method: "GET",
+                    beforeSend: function(){
+                        $('#loading').append('<img src="img/load.png" alt="loading"> Wird geladen...');
+                    },
                     success: function(data) {
+                        
+                        $('#loading').css('display', 'none');
                         
                         var items = JSON.parse(data);
                         $('#items').html(data);
@@ -58,7 +61,7 @@ and open the template in the editor.
                             
                             msg += '<p class = "title">'+ title +'</p>'+
                                     '<div class ="photo"><img class="link-image" src="img/'+ img_id +
-                                    '" alt="'+ title +', '+note+'" width="220" ></div>'+
+                                    '" alt="'+ title +'<br>'+note+'" width="220" ></div>'+
                                     
                                     '<p class = "availability"> ';
                             
@@ -68,7 +71,6 @@ and open the template in the editor.
                                 msg += '<span class="allgone">'+ available + ' </span>';
                             }
                             msg += ' von ' + total + '</p></div>';
-//                               '<p class = "note">' + note + '</p></div>';
 
                         }
                         
@@ -76,6 +78,8 @@ and open the template in the editor.
                         
                         init_imgclick();
                     }
+                    
+
                 });
                 
                 var init_imgclick = function(){
@@ -90,8 +94,8 @@ and open the template in the editor.
                 
                 var filter = function() {
                     var input = $('#filter-search').val().toLowerCase(); //Text aus Eingabe in Kleinbuchstaben
-                    console.log(search_item);
-                    console.log(input);
+//                    console.log(search_item);
+//                    console.log(input);
 
                     $('.tile').css('display', 'none');
                     
@@ -101,9 +105,7 @@ and open the template in the editor.
                         if (search_item[index].indexOf(input) >-1) {
                             $('.'+index+'').css('display', '');
                         }
-//                        if (search_item[index].search(input) >-1) {
-//                            $('#items').append('<p>'+search_item[index]+'</p>');
-//                        }
+
                     }
                     
                     
@@ -120,7 +122,7 @@ and open the template in the editor.
         </script>
 
         <div class="logo">
-            <a href="http://www.biblio.unisg.ch"><img src="img/hsg_logo_de.jpg" width="180px" alt="HSG-Bibliothek"></a>
+            <a href="https://www.unisg.ch/universitaet/bibliothek"><img src="img/hsg_logo_de.jpg" width="180px" alt="HSG-Bibliothek"></a>
         </div>
         <header>Verfügbarkeit Kleinmaterialien</header>
         <nav>
@@ -133,7 +135,18 @@ and open the template in the editor.
         <div id="search">
             <input type="text" placeholder="Suche nach..." id="filter-search"/>
         </div>
+        <div id="loading"></div>
         <div id="items"></div>
+        
+        <footer>
+            <address>
+                <a href="https://www.unisg.ch/universitaet/bibliothek" >HSG-Bibliothek</a> &bull; 
+                <a href="mailto:bibliothek@unisg.ch">bibliothek@unisg.ch</a> &bull; 
+                +41 71 224 22 70 &bull;
+                Dufourstrasse 50 &bull; 
+                CH-9000 St.Gallen
+            </address>
+        </footer>
 
     </body>
 </html>

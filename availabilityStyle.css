@@ -1,11 +1,7 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
+
 /* 
     Created on : 19.03.2018, 15:46:22
-    Author     : kathr
+    Author     : Kathrin Heim
 */
 
 
@@ -32,9 +28,14 @@ header {
    
 }
 
-nav {
+nav, #loading, #search, footer {
     margin: 10px;
 
+}
+
+#loading {
+    text-align: center;
+    font-weight: bold;
 }
 
 #navi {
@@ -68,9 +69,16 @@ nav {
     color: white;
 }
 
-#search {
+footer {
+    clear: both;
+}
 
-    margin: 10px;
+a:link, a:visited, a:active {
+    color: darkgreen;
+}
+
+ a:hover {
+    color: limegreen;
 }
 
 input {
@@ -144,7 +152,7 @@ p {
     visibility:hidden;
 }
 
-.instructions {
+#info {
     margin: 10px;
     background-color: lightgray;
     padding: 20px;
@@ -152,7 +160,8 @@ p {
 }
 
 .jq-icon-info {
-    background-color: #20252d;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 1em;
 }
 
 .jq-toast-wrap {
