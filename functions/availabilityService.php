@@ -2,7 +2,10 @@
 
 require_once 'jsonParser.php';
 
-
+/**
+ * The Availability Service gets the JSON string from the RTAC service and groups it
+ * by different gadgets (Method parseRTAC). The returned array is encoded back to JSON and returned.
+ */
 
 $resultString = getRTAC();
                 
