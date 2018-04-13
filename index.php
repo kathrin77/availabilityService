@@ -40,8 +40,7 @@
                 <a href="mailto:bibliothek@unisg.ch">bibliothek@unisg.ch</a> &bull; 
                 +41 71 224 22 70 &bull;
                 Dufourstrasse 50 &bull; 
-                CH-9000 St.Gallen &bull;
-                Icon pack by <a href="https://icons8.com" target="blank">Icons8</a>
+                CH-9000 St.Gallen
             </address>
         </footer>
 
