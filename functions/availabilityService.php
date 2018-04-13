@@ -2,11 +2,15 @@
 
 require_once 'jsonParser.php';
 
-
+/**
+ * The Availability Service gets the JSON string from Aleph RTAC service and 
+ * groups the gadgets by type (method parseRTAC). 
+ * The array returned by parseRTAC is encoded as JSON and returned, to be 
+ * used by worker.js
+ */
 
 $resultString = getRTAC();
-                
-    //wenn resultString gültig:                
+                                
     if (isset($resultString)) {
         
         //var_dump($resultString);

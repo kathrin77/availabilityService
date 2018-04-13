@@ -34,6 +34,8 @@
                     <li>Bitte Ladekabel so rasch wie möglich wieder zurückbringen.</li>
                 </ul>
             
+            Vermissen Sie etwas bei unseren Kleinmaterialien? Schreiben Sie es auf unsere 
+            <a href="https://de.padlet.com/HSGBibliothek/Ideenwand" alt="Ideenwand" target="_blank">Ideenwand!</a></br>
             Bei Fragen oder Anregungen steht Ihnen das Bibliothekspersonal gerne zur Verfügung. <br>
             <a href="https://www.unisg.ch/de/universitaet/bibliothek/ueberuns/oeffnungszeiten">Öffnungszeiten der Bibliothek</a>
             </p>
@@ -44,7 +46,8 @@
                 <a href="mailto:bibliothek@unisg.ch">bibliothek@unisg.ch</a> &bull; 
                 +41 71 224 22 70 &bull;
                 Dufourstrasse 50 &bull; 
-                CH-9000 St.Gallen
+                CH-9000 St.Gallen &bull;
+                Icon pack by <a href="https://icons8.com" target="blank">Icons8</a>
             </address>
         </footer>
 
