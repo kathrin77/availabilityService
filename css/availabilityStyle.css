@@ -169,3 +169,77 @@ p {
 }
 
 
+@media
+
+only screen and ( min-resolution: 200dpi)
+
+{
+	/* Resolution-specific CSS for HD & Retina displays*/
+        
+        header {
+            font-size: 3em;
+        }
+        
+        .tile {
+            width: 85%;
+            max-height:fit-content;
+            font-size: 2.5em;
+            
+        }
+        
+        .tile img {
+            width: 100%;
+
+        }
+        
+        .green_tile {
+            border: 40px solid darkgreen;
+
+        }
+
+        .red_tile {
+            border: 40px solid darkred;
+        }
+        
+        .jq-icon-info {
+            font-size: 2.5em;
+            line-height: 2em;
+        }
+        
+        .jq-toast-wrap {
+            width: 80%;
+            height: auto;
+        }
+        
+        input {
+
+            height: 60px;
+            width: 95%;
+            font-size: 2.5em;
+
+        }
+        
+        .logo img {
+
+            width: 50%
+
+         }
+        
+        #navi img {
+            width: 80%;
+            padding-left: 10px;
+
+        }
+        
+        
+        #navi {
+            width: 15%;
+
+        }
+        
+        #navi li {
+            float:none;
+ 
+        }
+}
+
