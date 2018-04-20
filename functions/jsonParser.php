@@ -22,7 +22,8 @@ function getRTAC () {
     //$file = "data/test_04042018.json";
     //Simulate status as of 13 April 2018
     //$file = "data/test_13042018.json";
-    
+    //Simulate status as of 16 April 2018
+    //$file = "data/test_16042018.json";
     $jsonstring = file_get_contents($file); 
     return $jsonstring;       
 
